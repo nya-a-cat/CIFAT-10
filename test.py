@@ -1,17 +1,12 @@
 import torch
-from torch.utils.data import Dataset
-from torchvision import datasets
-from torchvision.transforms import ToTensor
 
+ln1 = torch.nn.Linear(10, 10)
+ln2 = torch.nn.Linear(2,2)
+tor1 = torch.rand(1,2)
+print(tor1.sum())
 
+# m = torch.nn.GLU()
+# input = torch.randn(4, 2)
+# output = m(input)
+# print(output)
 
-training_data = datasets.CIFAR10(
-    root='./data',
-    train=True,
-    download=True,
-    transform=ToTensor()
-)
-
-data_loader = torch.utils.data.DataLoader(training_data,
-                                          batch_size=20,
-                                          shuffle=True,)
